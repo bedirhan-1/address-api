@@ -13,15 +13,14 @@ export type CreateAddressDto = {
     addressDetails: string
 }
 
+export interface UpdateAddressDto extends Partial<CreateAddressDto> {}
+
 
 const addressSchema = new mongoose.Schema({
     city: { type: String, required: true },
     addressTitle: { type: String, required: true },
     addressDetails: { type: String, required: true },
-},{
-
-    
-} );
+});
 
 
 

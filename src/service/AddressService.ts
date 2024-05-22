@@ -1,4 +1,4 @@
-import  Address, { IAddress }  from '../model/address';
+import  Address, { IAddress, UpdateAddressDto }  from '../model/address';
 import { CreateAddressDto} from '../model/address';
 
 
@@ -15,7 +15,7 @@ export class AddressService {
         return await Address.findById(addressId);
     }   
 
-    async updateAddress(addressId: string, updateData: IAddress): Promise<IAddress | null>{
+    async updateAddress(addressId: string, updateData: UpdateAddressDto): Promise<IAddress | null>{
         return await Address.findByIdAndUpdate(addressId, updateData, { new: true });
     }
 
